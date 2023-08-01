@@ -62,16 +62,31 @@ a {
   color: inherit;
 }
 
-h2 {
-  font-size: clamp(1rem, 5vw, 5rem);
+.section-heading {
+  font-size: clamp(2rem, 5.1vw, 5rem);
   font-weight: 400;
   text-align: center;
+  margin: .5rem;
   letter-spacing: 0.5em;
   color: #d7d4c9;
   z-index: 2;
   font-family: "Gilda Display";
   /*or ny or CG or ph*/
   text-shadow: 1px 1px 5px #201f1a;
+}
+
+#para2 {
+  font-size: clamp(0.7rem, 1.4vw, 1.3rem);
+  margin: 1.5rem 1rem;
+  max-width: clamp(100px, 600vw, 950px);
+  font-family: "Montserrat";
+}
+
+#para1 {
+  font-size: clamp(1rem, 2.8vw, 3rem);
+  margin: 1rem;
+  font-family: "Philosopher";
+  color: #d7d4c9;
 }
 
 header {
@@ -108,8 +123,11 @@ section .inner {
 
 section .bg {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  text-align: center;
   position: absolute;
   height: 100%;
   width: 100%;
