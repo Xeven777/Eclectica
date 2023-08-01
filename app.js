@@ -3,6 +3,8 @@ gsap.registerPlugin(Observer);
 let sections = document.querySelectorAll("section"),
   images = document.querySelectorAll(".bg"),
   headings = gsap.utils.toArray(".section-heading"),
+  paragraph = gsap.utils.toArray(".para"),
+  splitParagraph = paragraph.map(para => new SplitText(para, { type: "chars,words,lines", linesClass: "clip-text" })),
   outerWrappers = gsap.utils.toArray(".outer"),
   innerWrappers = gsap.utils.toArray(".inner"),
   splitHeadings = headings.map(heading => new SplitText(heading, { type: "chars,words,lines", linesClass: "clip-text" })),
@@ -29,6 +31,7 @@ function gotoSection(index, direction) {
       .set(sections[currentIndex], { autoAlpha: 0 });
   }
   gsap.set(sections[index], { autoAlpha: 1, zIndex: 1 });
+
   tl.fromTo([outerWrappers[index], innerWrappers[index]], {
     yPercent: i => i ? -100 * dFactor : 100 * dFactor
   }, {
@@ -50,6 +53,7 @@ function gotoSection(index, direction) {
     }, 0.2);
 
   currentIndex = index;
+
 }
 
 Observer.create({
