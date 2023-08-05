@@ -1,18 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
 
 @font-face {
-  font-family: 'domain';
-  src: url('./domain.ttf') format('truetype');
+  font-family: "domain";
+  src: url("./domain.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'ny';
-  src: url('./NewYork.otf') format('opentype');
+  font-family: "ny";
+  src: url("./NewYork.otf") format("opentype");
 }
 
 /* fonts used : ny, domain,cormorant garamond,playfair display sc, lato,outfit,poppins,
 overpass,montserrat,work sans, nunito sans,source sans 3, philosopher,gloock,gilda display */
-
 
 * {
   margin: 0;
@@ -47,7 +46,6 @@ overpass,montserrat,work sans, nunito sans,source sans 3, philosopher,gloock,gil
   --color-grey-3: #161614;
 } */
 
-
 body {
   margin: 0;
   padding: 0;
@@ -66,7 +64,7 @@ a {
   font-size: clamp(2rem, 5.1vw, 5rem);
   font-weight: 400;
   text-align: center;
-  margin: .5rem;
+  margin: 0.5rem;
   letter-spacing: 0.5em;
   color: #d7d4c9;
   z-index: 2;
@@ -85,7 +83,7 @@ a {
   height: 1px;
   background: linear-gradient(to right, transparent, #d1cabc8e, transparent);
   transform: translateX(-50%);
-  transition: all ease-in-out .5s;
+  transition: all ease-in-out 0.5s;
 }
 
 #para2 {
@@ -94,6 +92,9 @@ a {
   max-width: clamp(100px, 70vw, 950px);
   font-family: "Montserrat";
   z-index: 9;
+  line-height: 1.5;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 #para1 {
@@ -145,7 +146,7 @@ section .inner {
 section .bg {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -159,12 +160,12 @@ section .bg {
 
 .glass {
   position: relative;
-  backdrop-filter: blur(4.5px);
+  backdrop-filter: blur(7px);
   border-radius: 1.7em;
   box-shadow: 3px 2px 30px #13131394;
   overflow: hidden;
   padding: 1.4rem;
-  transition: all ease-in-out .4s;
+  transition: all ease-in-out 0.4s;
 }
 
 .glass:hover #aboutline::after {
@@ -174,7 +175,7 @@ section .bg {
 }
 
 .glass:hover {
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(15px);
   box-shadow: 7px 5px 30px #141212c6;
   /* transform: translateY(-2px); */
 }
@@ -184,15 +185,53 @@ section .bg .clip-text {
 }
 
 .first .bg {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%), url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80);
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    ),
+    url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80);
+}
+.first .bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: inherit;
+  filter: blur(3px);
+  z-index: -1;
 }
 
 .second .bg {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.46) 100%), url("./img/g_4.jpg");
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.46) 100%
+    ),
+    url("./img/g_4.jpg");
 }
-
+.second .bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: inherit;
+  filter: blur(5px);
+  z-index: -1;
+}
 .third .bg {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%), url(https://images.unsplash.com/photo-1617438817509-70e91ad264a5?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxNzU2MDk4Mg&ixlib=rb-1.2.1&q=75&w=1920);
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    ),
+    url(https://images.unsplash.com/photo-1617438817509-70e91ad264a5?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxNzU2MDk4Mg&ixlib=rb-1.2.1&q=75&w=1920);
 }
 
 h2 * {
@@ -216,15 +255,14 @@ h2 * {
   transition: all 0.3s ease-in-out;
 }
 
-
 .theme-btn:hover {
-  transform: translateY(-5%)
+  transform: translateY(-5%);
 }
 
 .theme-btn i {
   font-size: 1.4rem;
   color: var(--color-grey-2);
-  pointer-events: none
+  pointer-events: none;
 }
 
 .controls {
@@ -271,4 +309,103 @@ h2 * {
 
 .controls .control:hover {
   transform: scale(1.08);
+}
+
+/*Past Guests---------------------------------------------------------*/
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  width: 80%;
+  justify-content: center;
+}
+.project-box {
+  margin: 60px;
+}
+.single-box {
+  width: 200px;
+  height: 140px;
+  perspective: 1200px;
+}
+.box-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-150px);
+  transition: all 1s;
+}
+.sides {
+  position: absolute;
+  width: 250px;
+  height: 180px;
+  text-align: center;
+}
+.side-1 {
+  transform: rotateY(0deg) translateZ(150px);
+  z-index: 2;
+  background-size: cover;
+  background-position: center center;
+  border: 3px solid var(--hover-color);
+  border-radius: 10px;
+  box-shadow: 0 0 25px var(--hover-color);
+}
+.side-2 {
+  color: #fff;
+  opacity: 0;
+  background-color: var(--hover-color);
+  transform: rotateY(90deg) translateZ(150px);
+  transition: all 0.5s;
+  border: 3px solid var(--hover-color);
+  border-radius: 10px;
+  box-shadow: 0 0 25px var(--hover-color);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.project-box:hover .box-content {
+  transform: translateZ(-150px) rotateY(-90deg);
+  .side-2 {
+    opacity: 1;
+    transition: all 0.5s;
+  }
+  .side-1 {
+    opacity: 0;
+    transition: all 0.5s;
+  }
+}
+
+.project-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+.project-content h2 {
+  color: var(--bg-color);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.project-content p {
+  color: var(--bg-color);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 18px;
+  font-family: "Montserrat", sans-serif;
+}
+.socials {
+  margin-top: 30px;
+}
+.socials i {
+  margin: 0 15px;
+}
+
+@media (max-width: 991px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .project-box {
+    padding-bottom: 4rem;
+  }
 }
